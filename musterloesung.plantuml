@@ -110,7 +110,7 @@ class Form {
 	+getY(): int
 }
 
-class Dreieck extends From {
+class Dreieck extends Form {
 	-x1: int
 	-x2: int
 	-y1: int

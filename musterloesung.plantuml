@@ -1,0 +1,138 @@
+@startuml fahrzeuge
+
+class Fahrzeug {
+	-hersteller: String
+	-modell: String
+	-bremsen: Bremse[]
+
+	+Fahrzeug(hersteller: String, modell: String, bremsen: Bremse[])
+	+toString(): String
+}
+
+interface Bremse {
+	+bremsen()
+	+brauchtService(): boolean
+}
+
+Fahrzeug o--- Bremse
+
+class Cantileverbremse implements Bremse {
+	-static final MAX_BELAG: int
+	-static final MIN_BELAG: int
+
+	-belagLinks: int
+	-belagRechts: int
+
+	+bremsen()
+	+brauchtService(): boolean
+}
+
+class Scheibenbremse implements Bremse {
+	-static final MAX_RIEFENTIEFE: int
+	-static final MIN_BELAG: int
+	-static final MAX_BELAG: int
+
+	-riefentiefe: int
+	-belag: int
+
+	+bremsen()
+	+brauchtService(): boolean
+}
+
+class Trommelbremse implements Bremse {
+	-static final MIN_BELAG: int
+	-static final MAX_BELAG: int
+
+	-belag: int
+	
+	+bremsen()
+	+brauchtService()
+}
+
+
+class Fahrrad extends Fahrzeug {
+	-gaenge: int
+	-ruecktrittbremse: int
+
+	+Fahrrad(hersteller: String, modell: String, bremsen: Bremse[], gaenge: int, ruecktrittbremse: int)
+	+toString(): String
+}
+
+Fahrrad *--- Cantileverbremse
+
+class Kraftfahrzeug extends Fahrzeug {
+	-ps: int
+	-hubraum: int
+	-tankvolumen: int
+	-zulGesamtGewicht: int
+
+	+Kraftfahrzeug(hersteller: String, modell: String, bremsen: Bremse[], ps: int, hubraum: int, tankvolumen: int, zulGesamtGewicht: int)
+	+toString(): String
+}
+
+class Auto extends Kraftfahrzeug {
+	-sitze: int
+	-tueren: int
+
+	+Auto(hersteller: String, modell: String, bremsen: Bremse[], ps: int, hubraum: int, tankvolumen: int, zulGesamtGewicht: int, sitze: int, tueren: int)
+	+toString(): String
+}
+
+Auto *--- Scheibenbremse
+
+class Lastwagen extends Kraftfahrzeug {
+	-achsen: int
+	-nutzlast: int
+
+	+Lastwagen(hersteller: String, modell: String, bremsen: Bremse[], ps: int, hubraum: int, tankvolumen: int, zulGesamtGewicht: int, achsen: int, nutzlast: int)
+	+toString(): String
+	-static erstelleBremsen(n: int): Bremse[]
+}
+
+Lastwagen *--- Trommelbremse
+
+class Motorrad extends Kraftfahrzeug {
+	+Motorrad(hersteller: String, modell: String, bremsen: Bremse[], ps: int, hubraum: int, tankvolumen: int)
+	+toString: String
+}
+
+
+@enduml
+
+@startuml formen
+
+class Form {
+	-x: int
+	-y: int
+
+	+Form(x: int, y: int)
+	+getX(): int
+	+getY(): int
+}
+
+class Dreieck extends From {
+	-x1: int
+	-x2: int
+	-y1: int
+	-y2: int
+
+	+Dreieck(x0: int, y0: int, x1: int, y1: int, x2: int, y2: int)
+	+toString(): String
+}
+
+class Kreis extends Form {
+	-radius: int
+
+	+Kreis(x: int, y: int, r: int)
+	+toString(): String
+}
+
+class Rechteck extends Form {
+	-breite: int
+	-hoehe: int	
+
+	+Rechteck(x: int, y: int, b: int, h: int)
+	+toString(): String
+}
+
+@enduml

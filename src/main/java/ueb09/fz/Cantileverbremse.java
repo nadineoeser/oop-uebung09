@@ -1,6 +1,6 @@
 package ueb09.fz;
 
-public class Cantileverbremse {
+public class Cantileverbremse implements Bremse {
 	private static final int MAX_BELAG = 5;
 	private static final int MIN_BELAG = 1;
 
@@ -15,7 +15,7 @@ public class Cantileverbremse {
 		System.out.println("Cantileverbremse bremst!");
 	}
 
-	public boolean bremsstatus() {
+	public boolean brauchtService() {
 		return belagLinks > MIN_BELAG && belagRechts > MIN_BELAG;
 	}
 

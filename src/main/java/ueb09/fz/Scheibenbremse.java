@@ -1,6 +1,6 @@
 package ueb09.fz;
 
-public class Scheibenbremse {
+public class Scheibenbremse implements Bremse {
 	private static final int MAX_RIEFENTIEFE = 4;
 	private static final int MIN_BELAG = 1;
 	private static final int MAX_BELAG = 8;
@@ -17,7 +17,7 @@ public class Scheibenbremse {
 		System.out.println("Scheibembremse bremst!");
 	}
 
-	public boolean nochInOrdnung() {
+	public boolean brauchtService() {
 		return riefentiefe < MAX_RIEFENTIEFE && belag > MIN_BELAG;
 	}
 

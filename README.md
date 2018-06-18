@@ -17,6 +17,9 @@ Gegeben ist das Paket `ueb09.fz`, sowie die bereits modellierten Klassen `Fahrra
 > Hinweis: Es bietet sich eine mehrschichtige Klassenhierarchie für die Fahrzeuge sowie eine Schnittstelle für die Bremsen an.
 
 
+![Fahrzeuge](fahrzeuge.svg)
+
+
 ## Top-Down: Modellierung einer Klassenhierarchie
 
 Für das Programm `ueb09.gf.Zeichenprogramm` sollen Kreise, Dreiecke und Rechtecke modelliert werden.
@@ -35,3 +38,5 @@ Kreis um (5, 10) mit Radius 5
 Rechteck von (0, 0) bis (3, 2) mit Breite 3 und Höhe 2
 Dreieck an (0, 0), (1, 0) und (0, 1) mit Seitenlängen 1, 1 und 1.4142135623730951.
 ```
+
+![Formen](formen.svg)

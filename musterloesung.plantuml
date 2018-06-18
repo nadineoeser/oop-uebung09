@@ -96,6 +96,8 @@ class Motorrad extends Kraftfahrzeug {
 	+toString: String
 }
 
+Motorrad *-- Scheibenbremse
+Motorrad *-- Trommelbremse
 
 @enduml
 

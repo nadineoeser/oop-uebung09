@@ -19,6 +19,7 @@ public class Auto {
 		this.tankvolumen = tankvolumen;
 		this.sitze = sitze;
 		this.zulGesamtGewicht = zulGesamtGewicht;
+		this.tueren = tueren;
 
 		this.bremsen = new Scheibenbremse[] {
 				new Scheibenbremse(),

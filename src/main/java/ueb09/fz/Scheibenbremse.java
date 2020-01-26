@@ -1,6 +1,8 @@
 package ueb09.fz;
 
-public class Scheibenbremse {
+import org.graalvm.compiler.asm.sparc.SPARCAssembler;
+
+public class Scheibenbremse implements Bremse {
 	private static final int MAX_RIEFENTIEFE = 4;
 	private static final int MIN_BELAG = 1;
 	private static final int MAX_BELAG = 8;
@@ -17,9 +19,12 @@ public class Scheibenbremse {
 		System.out.println("Scheibembremse bremst!");
 	}
 
-	public boolean nochInOrdnung() {
+	@Override
+	public boolean brauchtService() {
 		return riefentiefe < MAX_RIEFENTIEFE && belag > MIN_BELAG;
 	}
+
+
 
 	public String toString() {
 		return "Scheibenbremse";
